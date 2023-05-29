@@ -30,6 +30,10 @@ import { ListarTipoProductoComponent } from './tipoProducto/listar-tipo-producto
 import { CrearTipoProductoComponent } from './tipoProducto/crear-tipo-producto/crear-tipo-producto.component';
 import { DetalleTipoProductoComponent } from './tipoProducto/detalle-tipo-producto/detalle-tipo-producto.component';
 import { ActualizarTipoProductoComponent } from './tipoProducto/actualizar-tipo-producto/actualizar-tipo-producto.component';
+import { ListarLogisticaTerrestreComponent } from './logistica/terrestre/listar-logistica-terrestre/listar-logistica-terrestre.component';
+import { CrearLogisticaTerrestreComponent } from './logistica/terrestre/crear-logistica-terrestre/crear-logistica-terrestre.component';
+import { DetalleLogisticaTerrestreComponent } from './logistica/terrestre/detalle-logistica-terrestre/detalle-logistica-terrestre.component';
+import { ActualizarLogisticaTerrestreComponent } from './logistica/terrestre/actualizar-logistica-terrestre/actualizar-logistica-terrestre.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +56,11 @@ import { ActualizarTipoProductoComponent } from './tipoProducto/actualizar-tipo-
     ListarTipoProductoComponent,
     CrearTipoProductoComponent,
     DetalleTipoProductoComponent,
-    ActualizarTipoProductoComponent
+    ActualizarTipoProductoComponent,
+    ListarLogisticaTerrestreComponent,
+    CrearLogisticaTerrestreComponent,
+    DetalleLogisticaTerrestreComponent,
+    ActualizarLogisticaTerrestreComponent
   ],
   imports: [
     CommonModule,

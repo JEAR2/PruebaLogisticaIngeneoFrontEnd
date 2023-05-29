@@ -34,17 +34,19 @@ export class ActualizarClienteComponent implements OnInit {
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
     this.clienteService.update(id, this.cliente!).subscribe(
-      data => {
-        Swal.fire(
-          'Actualizado!',
-          'Ha sido actualizado el cliente con id: '+id,
-          'success'
-        )
-        this.router.navigate(['/lista-clientes']);
-      },
-      err => {
-        Swal.fire('Ha ocurrido un error')
-        // this.router.navigate(['/']);
+      {
+        next:data => {
+          Swal.fire(
+            'Actualizado!',
+            'Ha sido actualizado el cliente con id: '+id,
+            'success'
+          )
+          this.router.navigate(['/lista-clientes']);
+        },
+        error:err => {
+          Swal.fire('Ha ocurrido un error')
+          // this.router.navigate(['/']);
+        }
       }
     );
   }

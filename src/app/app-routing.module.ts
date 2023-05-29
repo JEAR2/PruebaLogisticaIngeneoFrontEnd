@@ -20,6 +20,10 @@ import { ListarTipoProductoComponent } from './tipoProducto/listar-tipo-producto
 import { CrearTipoProductoComponent } from './tipoProducto/crear-tipo-producto/crear-tipo-producto.component';
 import { DetalleTipoProductoComponent } from './tipoProducto/detalle-tipo-producto/detalle-tipo-producto.component';
 import { ActualizarTipoProductoComponent } from './tipoProducto/actualizar-tipo-producto/actualizar-tipo-producto.component';
+import { ListarLogisticaTerrestreComponent } from './logistica/terrestre/listar-logistica-terrestre/listar-logistica-terrestre.component';
+import { CrearLogisticaTerrestreComponent } from './logistica/terrestre/crear-logistica-terrestre/crear-logistica-terrestre.component';
+import { DetalleLogisticaTerrestreComponent } from './logistica/terrestre/detalle-logistica-terrestre/detalle-logistica-terrestre.component';
+import { ActualizarLogisticaTerrestreComponent } from './logistica/terrestre/actualizar-logistica-terrestre/actualizar-logistica-terrestre.component';
 
 const routes: Routes = [
   {path:'', component:IndexComponent},
@@ -27,18 +31,22 @@ const routes: Routes = [
   {path:'lista-clientes', component:ListarClienteComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   {path:'lista-puertos', component:ListarPuertoComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   {path:'lista-tipo-producto', component:ListarTipoProductoComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
+  {path:'lista-logistica-terrestre', component:ListarLogisticaTerrestreComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   {path:'nueva-bodega',component:CrearComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'nuevo-cliente',component:CrearClienteComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'nuevo-puerto',component:CrearPuertoComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'nuevo-tipo-producto',component:CrearTipoProductoComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
+  {path:'nueva-logistica-terrestre',component:CrearLogisticaTerrestreComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'detalle-bodega/:id',component:DetalleBodegaComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path:'detalle-cliente/:id',component:DetalleClienteComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path:'detalle-puerto/:id',component:DetallePuertoComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path:'detalle-tipo-producto/:id',component:DetalleTipoProductoComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
+  {path:'detalle-logistica-terreste/:id',component:DetalleLogisticaTerrestreComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path:'actualizar-bodega/:id',component:ActualizarBodegaComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'actualizar-cliente/:id',component:ActualizarClienteComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'actualizar-puerto/:id',component:ActualizarPuertoComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'actualizar-tipo-producto/:id',component:ActualizarTipoProductoComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
+  {path:'actualizar-logistica-terrestre/:id',component:ActualizarLogisticaTerrestreComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'login', component:LoginComponent},
   {path:'registro', component:RegistroComponent},
   { path: '**', redirectTo: '', pathMatch: 'full' }

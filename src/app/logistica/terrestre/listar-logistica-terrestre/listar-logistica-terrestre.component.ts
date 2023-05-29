@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { Bodega } from 'src/app/modelos/Entidades/bodega';
-import { BodegaService } from 'src/app/servicios/bodega.service';
+import { LogisticaTerrestre } from 'src/app/modelos/Entidades/logisticaTerrestre';
+import { LogisticaTerrestreService } from 'src/app/servicios/logistica-terrestre.service';
 import { TokenService } from 'src/app/servicios/token.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-listar-bodega',
-  templateUrl: './listar-bodega.component.html',
-  styleUrls: ['./listar-bodega.component.css']
+  selector: 'app-listar-logistica-terrestre',
+  templateUrl: './listar-logistica-terrestre.component.html',
+  styleUrls: ['./listar-logistica-terrestre.component.css']
 })
-export class ListarBodegaComponent implements OnInit{
-  bodegas:Bodega[]=[];
+export class ListarLogisticaTerrestreComponent implements OnInit{
+  logisticaTerrestre:LogisticaTerrestre[]=[];
   roles: string[] = [];
   isAdmin = false;
-  constructor(private bodegaService:BodegaService,private tokenService: TokenService){}
+  constructor(private logisticaTerrestreService:LogisticaTerrestreService,private tokenService: TokenService){}
 
   ngOnInit(): void {
-    this.cargarBodegas();
+    this.cargarLogisticaTerrestre();
     this.roles = this.tokenService.getAuthorities();
     this.roles.forEach(rol => {
       if (JSON.parse(JSON.stringify(rol))['authority'] === 'ROLE_ADMIN') {
@@ -25,12 +25,12 @@ export class ListarBodegaComponent implements OnInit{
     });
   }
 
-  cargarBodegas(): void {
-    this.bodegaService.lista().subscribe(
+  cargarLogisticaTerrestre(): void {
+    this.logisticaTerrestreService.lista().subscribe(
       {
         next:data => {
           console.log(data);
-          this.bodegas = data;
+          this.logisticaTerrestre = data;
         },
         error:err => {
           console.log(err);
@@ -41,8 +41,8 @@ export class ListarBodegaComponent implements OnInit{
 
   eliminar(id: number) {
     Swal.fire({
-      title: 'Está seguro que desea eliminar la bodega?',
-      text: "Bodega con id: "+id,
+      title: 'Está seguro que desea eliminar la logistica?',
+      text: "logistica terrestre con id: "+id,
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -50,15 +50,15 @@ export class ListarBodegaComponent implements OnInit{
       confirmButtonText: 'Si, Eliminar!'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.bodegaService.delete(id).subscribe(
+        this.logisticaTerrestreService.delete(id).subscribe(
           {
             next:data => {
               Swal.fire(
                 'ELiminada!',
-                'Ha sido eliminada la bodega con id: '+id,
+                'Ha sido eliminada la logistica terrestre con id: '+id,
                 'success'
               )
-              this.cargarBodegas();
+              this.cargarLogisticaTerrestre();
             },
             error:err => {
               Swal.fire('Ha ocurrido un error'+err.error.mensaje)

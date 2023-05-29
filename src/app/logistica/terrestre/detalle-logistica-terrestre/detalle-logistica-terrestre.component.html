@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<div class="container">
+  <div class="row mt-5" *ngIf="logisticaTerrestre">
+    <div class="col-md-4 mx-auto">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header text-center">
+              Detalle Logostica Terrestre
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>ID: </b>{{logisticaTerrestre.id}}</li>
+              <li class="list-group-item"><b>PLACA VEHÍCULO: </b>{{logisticaTerrestre.placaVehiculo}}</li>
+              <li class="list-group-item"><b>NÚMERO GUIA: </b>{{logisticaTerrestre.numeroGuia}}</li>
+              <li class="list-group-item"><b>CANTIDAD PRODUCTO: </b>{{logisticaTerrestre.cantidadProducto}}</li>
+              <li class="list-group-item"><b>FECHA REGISTRO: </b>{{logisticaTerrestre.fechaRegistro}}</li>
+              <li class="list-group-item"><b>FECHA ENTREGA: </b>{{logisticaTerrestre.fechaEntrega}}</li>
+              <li class="list-group-item"><b>PRECIO ENVIO: </b>{{logisticaTerrestre.precioEnvio}}</li>
+              <li class="list-group-item"><b>PRECIO ENVIO CON DESCUENTO: </b>{{logisticaTerrestre.precioEnvio-(logisticaTerrestre.precioEnvio*logisticaTerrestre.descuento)}}</li>
+              <li class="list-group-item"><b>CLIENTE: </b>{{logisticaTerrestre.cliente.nombre}}</li>
+              <li class="list-group-item"><b>BODEGA: </b>{{logisticaTerrestre.bodega.nombre}}</li>
+              <li class="list-group-item"><b>TIPO PRODUCTO: </b>{{logisticaTerrestre.tipoProducto.nombre}}</li>
+            </ul>
+            <div class="card-footer">
+                <button class="btn btn-outline-primary btn-block" (click)="volver()"><i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+            </div>
+          </div>
+          
+    </div>
+</div>
+</div>

@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Placa Vehiculo</th>
+        <th scope="col"># Guia</th>
+        <th scope="col">Bodega</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Ver</th>
+        <th scope="col" *ngIf="isAdmin">Editar</th>
+        <th scope="col" *ngIf="isAdmin">Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let logistica of logisticaTerrestre">
+        <td>{{logistica.id}}</td>
+        <td>{{logistica.placaVehiculo}}</td>
+        <td>{{logistica.numeroGuia}}</td>
+        <td>{{logistica.bodega.id}}-{{logistica.bodega.nombre}}</td>
+        <td>{{logistica.cliente.id}}-{{logistica.cliente.nombre}}</td>
+        <td><button class="btn btn-outline-primary" routerLink="/detalle-logistica-terreste/{{logistica.id}}"><i class="far fa-eye"></i> Ver</button></td>
+        <td *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/actualizar-logistica-terrestre/{{logistica.id}}"><i class="far fa-edit"></i> Editar</button></td>
+        <td *ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="eliminar(logistica.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table> 
+  <div class="mt-3" *ngIf="isAdmin">
+    <button class="btn btn-outline-success btn-lg" routerLink="/nueva-logistica-terrestre">Nueva Logistica Terreste</button>
+  </div>
