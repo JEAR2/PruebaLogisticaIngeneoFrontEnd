@@ -12,17 +12,25 @@ import { ListarClienteComponent } from './cliente/listar-cliente/listar-cliente.
 import { CrearClienteComponent } from './cliente/crear-cliente/crear-cliente.component';
 import { DetalleClienteComponent } from './cliente/detalle-cliente/detalle-cliente.component';
 import { ActualizarClienteComponent } from './cliente/actualizar-cliente/actualizar-cliente.component';
+import { ListarPuertoComponent } from './puerto/listar-puerto/listar-puerto.component';
+import { CrearPuertoComponent } from './puerto/crear-puerto/crear-puerto.component';
+import { DetallePuertoComponent } from './puerto/detalle-puerto/detalle-puerto.component';
+import { ActualizarPuertoComponent } from './puerto/actualizar-puerto/actualizar-puerto.component';
 
 const routes: Routes = [
   {path:'', component:IndexComponent},
   {path:'lista', component:ListarBodegaComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   {path:'lista-clientes', component:ListarClienteComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
+  {path:'lista-puertos', component:ListarPuertoComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   {path:'nueva-bodega',component:CrearComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'nuevo-cliente',component:CrearClienteComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
+  {path:'nuevo-puerto',component:CrearPuertoComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'detalle-bodega/:id',component:DetalleBodegaComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path:'detalle-cliente/:id',component:DetalleClienteComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
+  {path:'detalle-puerto/:id',component:DetallePuertoComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path:'actualizar-bodega/:id',component:ActualizarBodegaComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'actualizar-cliente/:id',component:ActualizarClienteComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
+  {path:'actualizar-puerto/:id',component:ActualizarPuertoComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'login', component:LoginComponent},
   {path:'registro', component:RegistroComponent},
   { path: '**', redirectTo: '', pathMatch: 'full' }

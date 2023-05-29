@@ -47,14 +47,14 @@ export class ListarClienteComponent implements OnInit{
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, Eliminar!'
+      confirmButtonText: 'Si, Eliminar!'
     }).then((result) => {
       if (result.isConfirmed) {
         this.clienteService.delete(id).subscribe(
           {
             next:data => {
               Swal.fire(
-                'ELiminad!',
+                'ELiminado!',
                 'Ha sido eliminad el cliente con id: '+id,
                 'success'
               )

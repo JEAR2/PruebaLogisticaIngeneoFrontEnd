@@ -27,7 +27,7 @@ export class CrearClienteComponent implements OnInit{
       {
         next:data => {
           Swal.fire(
-            'Cread!',
+            'Creado!',
             'Ha sido creada el cliente : '+cliente.nombre,
             'success'
           )

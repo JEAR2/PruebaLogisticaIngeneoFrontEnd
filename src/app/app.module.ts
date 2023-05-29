@@ -22,6 +22,10 @@ import { ListarClienteComponent } from './cliente/listar-cliente/listar-cliente.
 import { CrearClienteComponent } from './cliente/crear-cliente/crear-cliente.component';
 import { ActualizarClienteComponent } from './cliente/actualizar-cliente/actualizar-cliente.component';
 import { DetalleClienteComponent } from './cliente/detalle-cliente/detalle-cliente.component';
+import { CrearPuertoComponent } from './puerto/crear-puerto/crear-puerto.component';
+import { ActualizarPuertoComponent } from './puerto/actualizar-puerto/actualizar-puerto.component';
+import { DetallePuertoComponent } from './puerto/detalle-puerto/detalle-puerto.component';
+import { ListarPuertoComponent } from './puerto/listar-puerto/listar-puerto.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +40,11 @@ import { DetalleClienteComponent } from './cliente/detalle-cliente/detalle-clien
     ListarClienteComponent,
     CrearClienteComponent,
     ActualizarClienteComponent,
-    DetalleClienteComponent
+    DetalleClienteComponent,
+    CrearPuertoComponent,
+    ActualizarPuertoComponent,
+    DetallePuertoComponent,
+    ListarPuertoComponent
   ],
   imports: [
     CommonModule,

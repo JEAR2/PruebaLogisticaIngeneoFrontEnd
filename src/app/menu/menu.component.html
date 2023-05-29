@@ -17,10 +17,19 @@
           <li class="nav-item" *ngIf="isLogged">
             <a class="nav-link" routerLink="/lista-clientes"><i class="far fa-list-alt"></i> Clientes</a>
           </li>
+          <li class="nav-item" *ngIf="isLogged">
+            <a class="nav-link" routerLink="/lista-tipo-producto"><i class="far fa-list-alt"></i> Tipo Producto</a>
+          </li>
+          <li class="nav-item" *ngIf="isLogged">
+            <a class="nav-link" routerLink="/lista-logistica-terrestre"><i class="far fa-list-alt"></i> Logistica Terrestre</a>
+          </li>
+          <li class="nav-item" *ngIf="isLogged">
+            <a class="nav-link" routerLink="/lista-logistica-maritima"><i class="far fa-list-alt"></i> Logistica Maritima</a>
+          </li>
           <li class="nav-item" *ngIf="!isLogged">
               <a class="nav-link"  routerLink="/login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
             </li>
-            <li class="nav-item" *ngIf="isLogged" (click)="onLogOut()">
+            <li class="nav-item" style="text-align:right" *ngIf="isLogged" (click)="onLogOut()">
               <a class="nav-link" style="cursor: pointer;"><i class="fas fa-door-open" ></i> Cerrar Sesión</a>
             </li>
         

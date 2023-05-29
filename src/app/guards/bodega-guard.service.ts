@@ -22,7 +22,7 @@ export class BodegaGuardService  {
       }
     });
     if (!this.tokenService.getToken() ) {
-      alert("hola")
+      
       this.router.navigate(['/login']);
       return false;
     }

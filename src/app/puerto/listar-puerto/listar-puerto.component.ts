@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { Bodega } from 'src/app/modelos/Entidades/bodega';
-import { BodegaService } from 'src/app/servicios/bodega.service';
+import { Puerto } from 'src/app/modelos/Entidades/puerto';
+import { PuertoService } from 'src/app/servicios/puerto.service';
 import { TokenService } from 'src/app/servicios/token.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-listar-bodega',
-  templateUrl: './listar-bodega.component.html',
-  styleUrls: ['./listar-bodega.component.css']
+  selector: 'app-listar-puerto',
+  templateUrl: './listar-puerto.component.html',
+  styleUrls: ['./listar-puerto.component.css']
 })
-export class ListarBodegaComponent implements OnInit{
-  bodegas:Bodega[]=[];
+export class ListarPuertoComponent implements OnInit{
+  puertos:Puerto[]=[];
   roles: string[] = [];
   isAdmin = false;
-  constructor(private bodegaService:BodegaService,private tokenService: TokenService){}
+  constructor(private puertoService:PuertoService,private tokenService: TokenService){}
 
   ngOnInit(): void {
-    this.cargarBodegas();
+    this.cargarPuertos();
     this.roles = this.tokenService.getAuthorities();
     this.roles.forEach(rol => {
       if (JSON.parse(JSON.stringify(rol))['authority'] === 'ROLE_ADMIN') {
@@ -25,15 +25,14 @@ export class ListarBodegaComponent implements OnInit{
     });
   }
 
-  cargarBodegas(): void {
-    this.bodegaService.lista().subscribe(
+  cargarPuertos(): void {
+    this.puertoService.lista().subscribe(
       {
         next:data => {
           console.log(data);
-          this.bodegas = data;
+          this.puertos = data;
         },
         error:err => {
-          console.log("dasds");
           console.log(err);
         }
       }
@@ -42,8 +41,8 @@ export class ListarBodegaComponent implements OnInit{
 
   eliminar(id: number) {
     Swal.fire({
-      title: 'Está seguro que desea eliminar la bodega?',
-      text: "Bodega con id: "+id,
+      title: 'Está seguro que desea eliminar el puerto?',
+      text: "puerto con id: "+id,
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -51,15 +50,15 @@ export class ListarBodegaComponent implements OnInit{
       confirmButtonText: 'Si, Eliminar!'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.bodegaService.delete(id).subscribe(
+        this.puertoService.delete(id).subscribe(
           {
             next:data => {
               Swal.fire(
-                'ELiminada!',
-                'Ha sido eliminada la bodega con id: '+id,
+                'ELiminado!',
+                'Ha sido eliminado el puerto con id: '+id,
                 'success'
               )
-              this.cargarBodegas();
+              this.cargarPuertos();
             },
             error:err => {
               Swal.fire('Ha ocurrido un error'+err.error.mensaje)
