@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<div class="container">
+  <div class="row mt-5" *ngIf="logisticaMaritima">
+    <div class="col-md-4 mx-auto">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header text-center">
+              Detalle Logistica Maritima
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>ID: </b>{{logisticaMaritima.id}}</li>
+              <li class="list-group-item"><b>NUMERO FLOTA: </b>{{logisticaMaritima.numeroFlota}}</li>
+              <li class="list-group-item"><b>NÚMERO GUIA: </b>{{logisticaMaritima.numeroGuia}}</li>
+              <li class="list-group-item"><b>CANTIDAD PRODUCTO: </b>{{logisticaMaritima.cantidadProducto}}</li>
+              <li class="list-group-item"><b>FECHA REGISTRO: </b>{{logisticaMaritima.fechaRegistro}}</li>
+              <li class="list-group-item"><b>FECHA ENTREGA: </b>{{logisticaMaritima.fechaEntrega}}</li>
+              <li class="list-group-item"><b>PRECIO ENVIO: </b>{{logisticaMaritima.precioEnvio}}</li>
+              <li class="list-group-item"><b>PRECIO ENVIO CON DESCUENTO: </b>{{logisticaMaritima.precioEnvio-(logisticaMaritima.precioEnvio*logisticaMaritima.descuento)}}</li>
+              <li class="list-group-item"><b>CLIENTE: </b>{{logisticaMaritima.cliente.nombre}}</li>
+              <li class="list-group-item"><b>PUERTO: </b>{{logisticaMaritima.puerto.nombre}}</li>
+              <li class="list-group-item"><b>TIPO PRODUCTO: </b>{{logisticaMaritima.tipoProducto.nombre}}</li>
+            </ul>
+            <div class="card-footer">
+                <button class="btn btn-outline-primary btn-block" (click)="volver()"><i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+            </div>
+          </div>
+          
+    </div>
+</div>
+</div>

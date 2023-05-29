@@ -34,6 +34,10 @@ import { ListarLogisticaTerrestreComponent } from './logistica/terrestre/listar-
 import { CrearLogisticaTerrestreComponent } from './logistica/terrestre/crear-logistica-terrestre/crear-logistica-terrestre.component';
 import { DetalleLogisticaTerrestreComponent } from './logistica/terrestre/detalle-logistica-terrestre/detalle-logistica-terrestre.component';
 import { ActualizarLogisticaTerrestreComponent } from './logistica/terrestre/actualizar-logistica-terrestre/actualizar-logistica-terrestre.component';
+import { ListarLogisticaMaritimaComponent } from './logistica/maritima/listar-logistica-maritima/listar-logistica-maritima.component';
+import { CrearLogisticaMaritimaComponent } from './logistica/maritima/crear-logistica-maritima/crear-logistica-maritima.component';
+import { DetalleLogisticaMaritimaComponent } from './logistica/maritima/detalle-logistica-maritima/detalle-logistica-maritima.component';
+import { ActualizarLogisticaMaritimaComponent } from './logistica/maritima/actualizar-logistica-maritima/actualizar-logistica-maritima.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +64,11 @@ import { ActualizarLogisticaTerrestreComponent } from './logistica/terrestre/act
     ListarLogisticaTerrestreComponent,
     CrearLogisticaTerrestreComponent,
     DetalleLogisticaTerrestreComponent,
-    ActualizarLogisticaTerrestreComponent
+    ActualizarLogisticaTerrestreComponent,
+    ListarLogisticaMaritimaComponent,
+    CrearLogisticaMaritimaComponent,
+    DetalleLogisticaMaritimaComponent,
+    ActualizarLogisticaMaritimaComponent
   ],
   imports: [
     CommonModule,

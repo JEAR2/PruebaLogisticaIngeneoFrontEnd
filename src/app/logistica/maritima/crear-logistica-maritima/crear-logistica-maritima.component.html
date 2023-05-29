@@ -1,0 +1,68 @@
+<app-menu></app-menu>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <h3>Nueva Logistica Terreste</h3>
+            <hr>
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="numeroFlota">Numero flota</label>
+                    <input type="text" class="form-control" id="numeroFlota" name="numeroFlota"
+                    [(ngModel)]="numeroFlota" required>
+                </div>
+                <div class="form-group">
+                    <label for="numeroGuia">Número Guia</label>
+                    <input type="text" class="form-control" id="numeroGuia" name="numeroGuia"
+                    [(ngModel)]="numeroGuia" required>
+                </div>
+                <div class="form-group">
+                    <label for="cantidadProducto">Cantidad Producto</label>
+                    <input type="number" class="form-control" id="cantidadProducto" name="cantidadProducto"
+                    [(ngModel)]="cantidadProducto" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaRegistro">Fecha Registro</label>
+                    <input type="date" class="form-control" id="fechaRegistro" name="fechaRegistro"
+                    [(ngModel)]="fechaRegistro" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaEntrega">Fecha Entrega</label>
+                    <input type="date" class="form-control" id="fechaEntrega" name="fechaEntrega"
+                    [(ngModel)]="fechaEntrega" required>
+                </div>
+                <div class="form-group">
+                    <label for="precioEnvio">Precio Envio</label>
+                    <input type="number" class="form-control" id="precioEnvio" name="precioEnvio"
+                    [(ngModel)]="precioEnvio" required>
+                </div>
+                
+                
+                <div class="form-group">
+                    <label for="cliente">Seleccione el Cliente</label>
+                    <select name="miselect" [(ngModel)]="cliente" class="form-control"  required>
+                        <option [value]="indice" *ngFor="let item of selectCliente; let indice=index">{{item.nombre}}</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="puerto">Seleccione el Puerto</label>
+                    <select name="miselect" [(ngModel)]="puerto" class="form-control"  required>
+                        <option [value]="indice" *ngFor="let item of selectPuerto; let indice=index">{{item.nombre}}</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="tipoProducto">Seleccione el Tipo de Producto</label>
+                    <select name="miselect" [(ngModel)]="tipoProducto" class="form-control"  required>
+                        <option [value]="indice" *ngFor="let item of selectTipoProducto; let indice=index">{{item.nombre}}</option>
+                        </select>
+                </div>
+                <br>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                    <i class="fas fa-plus-circle"></i> Crear</button>
+                <button class="btn btn-outline-primary btn-block" routerLink="/lista">
+                    <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+

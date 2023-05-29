@@ -24,6 +24,10 @@ import { ListarLogisticaTerrestreComponent } from './logistica/terrestre/listar-
 import { CrearLogisticaTerrestreComponent } from './logistica/terrestre/crear-logistica-terrestre/crear-logistica-terrestre.component';
 import { DetalleLogisticaTerrestreComponent } from './logistica/terrestre/detalle-logistica-terrestre/detalle-logistica-terrestre.component';
 import { ActualizarLogisticaTerrestreComponent } from './logistica/terrestre/actualizar-logistica-terrestre/actualizar-logistica-terrestre.component';
+import { CrearLogisticaMaritimaComponent } from './logistica/maritima/crear-logistica-maritima/crear-logistica-maritima.component';
+import { ListarLogisticaMaritimaComponent } from './logistica/maritima/listar-logistica-maritima/listar-logistica-maritima.component';
+import { DetalleLogisticaMaritimaComponent } from './logistica/maritima/detalle-logistica-maritima/detalle-logistica-maritima.component';
+import { ActualizarLogisticaMaritimaComponent } from './logistica/maritima/actualizar-logistica-maritima/actualizar-logistica-maritima.component';
 
 const routes: Routes = [
   {path:'', component:IndexComponent},
@@ -32,21 +36,25 @@ const routes: Routes = [
   {path:'lista-puertos', component:ListarPuertoComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   {path:'lista-tipo-producto', component:ListarTipoProductoComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   {path:'lista-logistica-terrestre', component:ListarLogisticaTerrestreComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
+  {path:'lista-logistica-maritima', component:ListarLogisticaMaritimaComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   {path:'nueva-bodega',component:CrearComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'nuevo-cliente',component:CrearClienteComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'nuevo-puerto',component:CrearPuertoComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'nuevo-tipo-producto',component:CrearTipoProductoComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'nueva-logistica-terrestre',component:CrearLogisticaTerrestreComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
+  {path:'nueva-logistica-maritima',component:CrearLogisticaMaritimaComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'detalle-bodega/:id',component:DetalleBodegaComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path:'detalle-cliente/:id',component:DetalleClienteComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path:'detalle-puerto/:id',component:DetallePuertoComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path:'detalle-tipo-producto/:id',component:DetalleTipoProductoComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path:'detalle-logistica-terreste/:id',component:DetalleLogisticaTerrestreComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
+  {path:'detalle-logistica-maritima/:id',component:DetalleLogisticaMaritimaComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path:'actualizar-bodega/:id',component:ActualizarBodegaComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'actualizar-cliente/:id',component:ActualizarClienteComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'actualizar-puerto/:id',component:ActualizarPuertoComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'actualizar-tipo-producto/:id',component:ActualizarTipoProductoComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'actualizar-logistica-terrestre/:id',component:ActualizarLogisticaTerrestreComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
+  {path:'actualizar-logistica-maritima/:id',component:ActualizarLogisticaMaritimaComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'login', component:LoginComponent},
   {path:'registro', component:RegistroComponent},
   { path: '**', redirectTo: '', pathMatch: 'full' }
