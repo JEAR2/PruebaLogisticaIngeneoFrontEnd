@@ -26,6 +26,10 @@ import { CrearPuertoComponent } from './puerto/crear-puerto/crear-puerto.compone
 import { ActualizarPuertoComponent } from './puerto/actualizar-puerto/actualizar-puerto.component';
 import { DetallePuertoComponent } from './puerto/detalle-puerto/detalle-puerto.component';
 import { ListarPuertoComponent } from './puerto/listar-puerto/listar-puerto.component';
+import { ListarTipoProductoComponent } from './tipoProducto/listar-tipo-producto/listar-tipo-producto.component';
+import { CrearTipoProductoComponent } from './tipoProducto/crear-tipo-producto/crear-tipo-producto.component';
+import { DetalleTipoProductoComponent } from './tipoProducto/detalle-tipo-producto/detalle-tipo-producto.component';
+import { ActualizarTipoProductoComponent } from './tipoProducto/actualizar-tipo-producto/actualizar-tipo-producto.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +48,11 @@ import { ListarPuertoComponent } from './puerto/listar-puerto/listar-puerto.comp
     CrearPuertoComponent,
     ActualizarPuertoComponent,
     DetallePuertoComponent,
-    ListarPuertoComponent
+    ListarPuertoComponent,
+    ListarTipoProductoComponent,
+    CrearTipoProductoComponent,
+    DetalleTipoProductoComponent,
+    ActualizarTipoProductoComponent
   ],
   imports: [
     CommonModule,

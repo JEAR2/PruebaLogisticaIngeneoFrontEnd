@@ -16,21 +16,29 @@ import { ListarPuertoComponent } from './puerto/listar-puerto/listar-puerto.comp
 import { CrearPuertoComponent } from './puerto/crear-puerto/crear-puerto.component';
 import { DetallePuertoComponent } from './puerto/detalle-puerto/detalle-puerto.component';
 import { ActualizarPuertoComponent } from './puerto/actualizar-puerto/actualizar-puerto.component';
+import { ListarTipoProductoComponent } from './tipoProducto/listar-tipo-producto/listar-tipo-producto.component';
+import { CrearTipoProductoComponent } from './tipoProducto/crear-tipo-producto/crear-tipo-producto.component';
+import { DetalleTipoProductoComponent } from './tipoProducto/detalle-tipo-producto/detalle-tipo-producto.component';
+import { ActualizarTipoProductoComponent } from './tipoProducto/actualizar-tipo-producto/actualizar-tipo-producto.component';
 
 const routes: Routes = [
   {path:'', component:IndexComponent},
   {path:'lista', component:ListarBodegaComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   {path:'lista-clientes', component:ListarClienteComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   {path:'lista-puertos', component:ListarPuertoComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
+  {path:'lista-tipo-producto', component:ListarTipoProductoComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   {path:'nueva-bodega',component:CrearComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'nuevo-cliente',component:CrearClienteComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'nuevo-puerto',component:CrearPuertoComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
+  {path:'nuevo-tipo-producto',component:CrearTipoProductoComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'detalle-bodega/:id',component:DetalleBodegaComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path:'detalle-cliente/:id',component:DetalleClienteComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path:'detalle-puerto/:id',component:DetallePuertoComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
+  {path:'detalle-tipo-producto/:id',component:DetalleTipoProductoComponent,canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
   {path:'actualizar-bodega/:id',component:ActualizarBodegaComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'actualizar-cliente/:id',component:ActualizarClienteComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'actualizar-puerto/:id',component:ActualizarPuertoComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
+  {path:'actualizar-tipo-producto/:id',component:ActualizarTipoProductoComponent,canActivate: [guard], data: { expectedRol: ['admin'] }},
   {path:'login', component:LoginComponent},
   {path:'registro', component:RegistroComponent},
   { path: '**', redirectTo: '', pathMatch: 'full' }
